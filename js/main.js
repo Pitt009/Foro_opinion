@@ -49,26 +49,26 @@ var agregarTemas = function (e) {
   e.preventDefault();
   var crearTema = $("#crear_tema").val();
   var crearAutor = $("#autor").val();
-
-  $.post(api.url ,{
+  $.post(api.url, {
 
     content : crearTema,
-    author_name : crearAutor,
+    author_name : crearAutor
 
-  }, function (response) {
-       crearTemas();
-
+  }, function (tema) {
+    $("#modal1").modal("hide");
+       crearTemas(tema);
   });
 
 }
- var filtrarTemas = function (e) {
+ var BuscarTemas = function (e) {
    e.preventDefault();
-   var criterioBusqueda = $("#search").val().toLowerCase;
-    var temasFiltrados = temas.filter(function (tema) {
-      return tema.name.toLowerCase().indexOf(criter) >=0;
-    });
-    crearTemas(temasFiltrados);
- }
+   $.getJSON(api.url, function (temas) {
+     var buscar = ("#search").val().toLowerCase();
+     var temasFiltrados = temas.filter( function (tema) {
+       return temas.content.toLowerCase().indexOf(buscar) >=0;
 
-
+     });
+     crearTemas(temasFiltrados);
+  });
+};
 $(document).ready(cargarPagina);
