@@ -4,17 +4,46 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Foro de opinión</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   </head>
   <body>
+    <nav>
+    <div class="nav-wrapper teal darken-4 center-align">
+      <a href="#!" class="brand-logo">Foro de Opinión</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons left">search</i>Buscar</a></li>
+      </ul>
+    </div>
+    </nav>
+    <a class="waves-effect waves-light btn" href="#modal1">Agregar Tema</a>
+    <div class="collection">
+      <a href="#!" class="collection-item "><span class="badge">1</span>Alan</a>
+      <a href="#!" class="collection-item"><span class="new badge">4</span>Alan</a>
+      <a href="#!" class="collection-item">Alan</a>
+      <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
+    </div>
+  <!---seccion Temas -->
+    <div class="conteniner" id="tema_comentario">
 
-    <h1>Aqui van todos los temas</h1>
-    
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Crear Tema:</h4>
+        <input>
+        <textarea></textarea>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agregar</a>
+      </div>
+    </div>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/main.js"></script>
-    
   </body>
 </html>
