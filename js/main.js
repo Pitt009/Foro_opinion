@@ -55,7 +55,7 @@ var agregarTemas = function (e) {
     author_name : crearAutor
 
   }, function (tema) {
-    $("#modal1").modal("hide");
+    $("#modal1").modal("");
        crearTemas(tema);
   });
 
