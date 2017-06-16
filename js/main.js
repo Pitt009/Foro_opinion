@@ -23,8 +23,9 @@ var plantilla =   '<div class="col s12 m8 offset-m2 l6 offset-l3">'+
               '<img src="https://dummyimage.com/100x100/000/fff" alt="" class="circle responsive-img">'+
             '</div>'+
             '<div class="col s10">'+
-              '<a>__tema__</a>'+
+              '<a href="#"" id="__id__">__tema__</a>'+
               '<p>__autor__<p>'+
+              '<p>__respuestas__<p>'+
             '</div>' +
           '</div>' +
         '</div>'+
@@ -33,8 +34,12 @@ var plantilla =   '<div class="col s12 m8 offset-m2 l6 offset-l3">'+
 
 var crearTemas = function (tema) {
   var plantillaFinal = "";
-  plantillaFinal += plantilla.replace("__tema__", tema.content).replace("__autor__", tema.author_name);
-  $content.append(plantillaFinal);
+  plantillaFinal += plantilla.replace("__tema__", tema.content)
+  .replace("__autor__", tema.author_name)
+  .replace("__respuestas__", tema.responses_count)
+  .replace("__id__", tema.id);
+  $content.prepend(plantillaFinal);
+
  // var autor = tema.author_name;
  // var contenido = tema.content;
  // var $autor = $("<p /> ");
@@ -56,6 +61,7 @@ var agregarTemas = function (e) {
 
   }, function (tema) {
     $("#modal1").modal("");
+    tema.responses_count = 0;
        crearTemas(tema);
   });
 
